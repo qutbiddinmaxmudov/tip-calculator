@@ -29,7 +29,7 @@
     border-radius: 0.25em;
     padding: 0.25em 1em;
     border: none;
-    transition: 0.1s box-shadow;
+    transition: 0.2s box-shadow, 0.2s background-color;
     cursor: pointer;
     
     &_selected{

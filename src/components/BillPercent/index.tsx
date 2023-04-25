@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./BillPercent.module.scss";
+import classNames from "classnames";
 
 const defaultTipPercents = [5, 10, 15, 25, 50];
 type Props = {
@@ -15,7 +16,13 @@ const BillPercent: React.FC<Props> = ({ percent, setPercent }) => {
       </div>
       <div className={styles.percent__wrapper}>
         {defaultTipPercents.map((item) => (
-          <button onClick={() => setPercent(item)} type="button" className={styles.percent__button}>
+          <button
+            onClick={() => setPercent(item)}
+            type="button"
+            className={classNames(styles.percent__button, {
+              [styles.percent__button_selected]: item === percent,
+            })}
+          >
             {item}%
           </button>
         ))}

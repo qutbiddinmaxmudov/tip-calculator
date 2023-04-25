@@ -9,7 +9,7 @@ import { checkBill, checkPeople } from "./helpers";
 const TipCalculator: React.FC = () => {
   const [bill, setBill] = useState(10);
   const [people, setPeople] = useState(1);
-  const [percent, setPercent] = useState(0);
+  const [percent, setPercent] = useState(10);
   const handleBillChange = (e: ChangeEvent<HTMLInputElement>) => {
     setBill(+e.target.value);
   };
