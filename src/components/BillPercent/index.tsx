@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./BillPercent.module.scss";
 
 const defaultTipPercents = [5, 10, 15, 25, 50];
@@ -15,9 +15,16 @@ const BillPercent: React.FC<Props> = ({ percent, setPercent }) => {
       </div>
       <div className={styles.percent__wrapper}>
         {defaultTipPercents.map((item) => (
-          <button type="button" className={styles.percent__button}>{item}%</button>
+          <button onClick={() => setPercent(item)} type="button" className={styles.percent__button}>
+            {item}%
+          </button>
         ))}
-        <input className={styles.percent__input} type="text" />
+        <input
+          className={styles.percent__input}
+          onChange={(e) => setPercent(+e.target.value)}
+          type="text"
+          value={percent}
+        />
       </div>
     </div>
   );
