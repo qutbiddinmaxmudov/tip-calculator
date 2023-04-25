@@ -30,4 +30,4 @@ Users should be able to:
 
 ## Author
 
-- LinkedIn - [LinkedIn](https://www.linkedin.com/in/qutbiddin-makhmudov/)
+- [LinkedIn](https://www.linkedin.com/in/qutbiddin-makhmudov/)
