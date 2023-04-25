@@ -24,10 +24,6 @@ Users should be able to:
 
 ### Built with
 
-- Semantic HTML5 markup
-- SCSS modules
-- Flexbox
-- Desktop-first workflow
 - [React](https://reactjs.org/) - JS library
 - [TypeScript](https://www.typescriptlang.org/) - TypeScript
 - [SCSS](https://sass-lang.com/) - For styles
