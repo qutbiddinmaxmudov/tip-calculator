@@ -18,6 +18,9 @@
 
   &__wrapper {
     position: relative;
+    background-color: $light-grayish-cyan;
+    border-radius: 0.2em;
+    z-index: 1;
   }
 
   &__icon {
@@ -25,10 +28,11 @@
     left: 1em;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
+    z-index: -1;
     width: 1em;
     height: 1em;
     object-fit: contain;
+    user-select: none;
   }
 
   &__field {
@@ -38,7 +42,7 @@
     padding: 0.25em 1em;
     background: none;
     width: 100%;
-    background-color: $light-grayish-cyan;
+    background-color: transparent;
     border-radius: 0.2em;
     font-size: 1.5em;
     font-family: $space-mono;
@@ -51,7 +55,7 @@
       border-color: $red;
     }
     
-    &:focus{
+    &:focus, &:hover{
       border-color: $cyan;
     }
   }

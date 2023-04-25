@@ -37,7 +37,7 @@
       color: $dark-cyan;
     }
     
-    &:focus{
+    &:hover, &:focus{
       box-shadow: 0 0 0.2em 0.1em $cyan inset;
     }
   }
@@ -62,7 +62,7 @@
       border-color: $red;
     }
     
-    &:focus{
+    &:focus, &:hover{
       border-color: $cyan;
     }
   }
