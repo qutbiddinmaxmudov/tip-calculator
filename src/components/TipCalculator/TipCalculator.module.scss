@@ -1,0 +1,9 @@
+@import '../../styles/global.scss';
+
+.calculator {
+  max-width: 600px;
+  width: 100%;
+  background: $very-light-grayish-cyan;
+  border-radius: 1em;
+  padding: 2em;
+}

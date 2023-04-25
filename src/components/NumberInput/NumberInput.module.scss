@@ -1,0 +1,57 @@
+@import '../../styles/global.scss';
+
+.input {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+  }
+
+  &__label {
+    color: $grayish-cyan;
+    font-size: 1em
+  }
+
+  &__error {
+    color: $red;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+  }
+
+  &__field {
+    text-align: right;
+    border: transparent 0.1em solid;
+    outline: none;
+    padding: 0.25em 1em;
+    background: none;
+    width: 100%;
+    background-color: $light-grayish-cyan;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    font-family: $space-mono;
+    font-weight: bold;
+    color: $dark-cyan;
+    transition: 0.2s border-color;
+    
+    &_error{
+      border-color: $red;
+    }
+    
+    &:focus{
+      border-color: $cyan;
+    }
+  }
+}
