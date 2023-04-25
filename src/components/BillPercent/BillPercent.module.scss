@@ -27,11 +27,19 @@
     font-family: $space-mono;
     font-weight: bold;
     border-radius: 0.25em;
-    padding: 0.25em 1em;
+    padding: 0.25em;
     border: none;
     transition: 0.2s box-shadow, 0.2s background-color;
     cursor: pointer;
     flex-grow: 1;
+    
+    @media (max-width: $md) {
+      width: 40%;
+    }
+    
+    @media (max-width: $sm) {
+      width: 30%;
+    }
     
     &_selected{
       background: $cyan;
@@ -59,6 +67,14 @@
     padding: 0 0.25em;
     caret-color: $cyan;
     flex-grow: 1;
+    
+    @media (max-width: $md) {
+      width: 40%;
+    }
+    
+    @media (max-width: $sm) {
+      width: 30%;
+    }
     
     &_error{
       border-color: $red;

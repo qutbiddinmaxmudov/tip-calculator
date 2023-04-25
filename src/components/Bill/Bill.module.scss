@@ -2,11 +2,21 @@
 
 .bill {
   width: 50%;
+  min-width: 400px;
   background-color: $dark-cyan;
   padding: 3em;
   border-radius: 1em;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: $md) {
+    padding: 1.5em;
+  }
+
+  @media (max-width: $sm) {
+    width: 100%;
+    min-width: auto;
+  }
 
   &__item {
     display: flex;
@@ -41,7 +51,7 @@
     color: $dark-cyan;
     margin-top: auto;
     cursor: pointer;
-    
+
     &:hover {
       background-color: $light-grayish-cyan;
     }
