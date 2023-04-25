@@ -1,9 +1,19 @@
 @import '../../styles/global.scss';
 
 .calculator {
-  max-width: 600px;
+  max-width: $lg;
   width: 100%;
   background: $very-light-grayish-cyan;
   border-radius: 1em;
   padding: 2em;
+  display: flex;
+  align-items: stretch;
+  gap: 4em;
+  
+  &__controls{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3em;
+  }
 }

@@ -5,6 +5,7 @@ import dollarIcon from "../../images/icon-dollar.svg";
 import personIcon from "../../images/icon-person.svg";
 import BillPercent from "../BillPercent";
 import { checkBill, checkPeople } from "./helpers";
+import Bill from "../Bill";
 
 const TipCalculator: React.FC = () => {
   const [bill, setBill] = useState(10);
@@ -18,23 +19,26 @@ const TipCalculator: React.FC = () => {
   };
   return (
     <div className={styles.calculator}>
-      <NumberInput
-        value={bill}
-        icon={dollarIcon}
-        label="Bill"
-        onChange={handleBillChange}
-        alt="Dollar"
-        error={checkBill(bill)}
-      />
-      <BillPercent percent={percent} setPercent={setPercent} />
-      <NumberInput
-        value={people}
-        icon={personIcon}
-        label="Number of People"
-        onChange={handlePeopleChange}
-        alt="Person"
-        error={checkPeople(people)}
-      />
+      <div className={styles.calculator__controls}>
+        <NumberInput
+          value={bill}
+          icon={dollarIcon}
+          label="Bill"
+          onChange={handleBillChange}
+          alt="Dollar"
+          error={checkBill(bill)}
+        />
+        <BillPercent percent={percent} setPercent={setPercent} />
+        <NumberInput
+          value={people}
+          icon={personIcon}
+          label="Number of People"
+          onChange={handlePeopleChange}
+          alt="Person"
+          error={checkPeople(people)}
+        />
+      </div>
+      <Bill/>
     </div>
   );
 };

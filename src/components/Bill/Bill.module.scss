@@ -1,0 +1,47 @@
+@import '../../styles/global.scss';
+
+.bill {
+  width: 50%;
+  background-color: $dark-cyan;
+  padding: 3em;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+
+  &__type {
+    color: $white;
+  }
+
+  &__subtitle {
+    color: $dark-grayish-cyan
+  }
+
+  &__result {
+    font-size: 3em;
+    color: $cyan;
+  }
+
+  &__reset {
+    width: 100%;
+    background: $cyan;
+    padding: 0.5em;
+    font-size: 1.5em;
+    font-family: $space-mono;
+    text-transform: uppercase;
+    border-radius: 0.5em;
+    border: none;
+    transition: 0.3s background-color;
+    color: $dark-cyan;
+    margin-top: auto;
+    &:hover {
+      background-color: $light-grayish-cyan;
+    }
+  }
+}
