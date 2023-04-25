@@ -11,17 +11,21 @@ const TipCalculator: React.FC = () => {
   const [bill, setBill] = useState(10);
   const [people, setPeople] = useState(1);
   const [percent, setPercent] = useState(10);
+  
   const handleBillChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (+e.target.value > 100000000 || isNaN(+e.target.value)) {
+    if (isNaN(+e.target.value)) {
       return;
     }
-    setBill(+e.target.value);
+    const value = +e.target.value > 100000000 ? 100000000 : +e.target.value;
+    setBill(value);
   };
+  
   const handlePeopleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (+e.target.value > 100 || isNaN(+e.target.value)) {
+    if (isNaN(+e.target.value)) {
       return;
     }
-    setPeople(+e.target.value);
+    const value = +e.target.value > 100 ? 100 : +e.target.value;
+    setPeople(value);
   };
 
   const handleReset = () => {
