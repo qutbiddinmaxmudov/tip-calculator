@@ -45,6 +45,7 @@
     font-weight: bold;
     color: $dark-cyan;
     transition: 0.2s border-color;
+    caret-color: $cyan;
     
     &_error{
       border-color: $red;

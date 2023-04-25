@@ -1,0 +1,69 @@
+@import '../../styles/global.scss';
+
+.percent {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+  }
+
+  &__label {
+    color: $grayish-cyan;
+    font-size: 1em
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  
+  &__button{
+    width: 30%;
+    background: $dark-cyan;
+    color: $white;
+    outline: none;
+    font-size: 1.5em;
+    font-family: $space-mono;
+    font-weight: bold;
+    border-radius: 0.25em;
+    padding: 0.25em 1em;
+    border: none;
+    transition: 0.1s box-shadow;
+    cursor: pointer;
+    
+    &_selected{
+      background: $cyan;
+      color: $dark-cyan;
+    }
+    
+    &:focus{
+      box-shadow: 0 0 0.2em 0.1em $cyan inset;
+    }
+  }
+
+  &__input {
+    text-align: right;
+    border: transparent 0.1em solid;
+    outline: none;
+    background: none;
+    background-color: $light-grayish-cyan;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    font-family: $space-mono;
+    font-weight: bold;
+    color: $dark-cyan;
+    transition: 0.2s border-color;
+    width: 30%;
+    padding: 0 0.25em;
+    caret-color: $cyan;
+    
+    &_error{
+      border-color: $red;
+    }
+    
+    &:focus{
+      border-color: $cyan;
+    }
+  }
+}

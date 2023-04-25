@@ -3,27 +3,21 @@ import styles from "./BillPercent.module.scss";
 
 const defaultTipPercents = [5, 10, 15, 25, 50];
 type Props = {
-  onChange: (value: number) => void;
+  setPercent: (value: number) => void;
+  percent: number;
 };
 
-const BillPercent: React.FC<Props> = ({ onChange }) => {
-  const [percent, setPercent] = useState(0);
-  useEffect(() => {
-    onChange(percent);
-  }, [percent]);
-
+const BillPercent: React.FC<Props> = ({ percent, setPercent }) => {
   return (
-    <div className={styles.input}>
-      <div className={styles.input__header}>
-        <label className={styles.input__label}>Select Tip %</label>
+    <div className={styles.percent}>
+      <div className={styles.percent__header}>
+        <label className={styles.percent__label}>Select Tip %</label>
       </div>
-      <div className={styles.input__wrapper}>
-        <div>
-          {defaultTipPercents.map((item) => (
-            <button>{item}%</button>
-          ))}
-        </div>
-        <input type="text" />
+      <div className={styles.percent__wrapper}>
+        {defaultTipPercents.map((item) => (
+          <button type="button" className={styles.percent__button}>{item}%</button>
+        ))}
+        <input className={styles.percent__input} type="text" />
       </div>
     </div>
   );

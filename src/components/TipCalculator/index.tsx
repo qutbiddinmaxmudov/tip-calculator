@@ -6,12 +6,13 @@ import personIcon from "../../images/icon-person.svg";
 import BillPercent from "../BillPercent";
 
 const TipCalculator: React.FC = () => {
-  const [bill, setBill] = useState(0);
+  const [bill, setBill] = useState(10);
+  const [percent, setPercent] = useState(0.10)
   const onBillChange = (e: ChangeEvent<HTMLInputElement>) => setBill(+e.target.value);
   return (
     <div className={styles.calculator}>
       <NumberInput value={bill} icon={dollarIcon} label="Bill" onChange={onBillChange} alt="Dollar" error="Error" />
-      <BillPercent />
+      <BillPercent percent={percent}setPercent={setPercent} />
       <NumberInput
         value={bill}
         icon={personIcon}
