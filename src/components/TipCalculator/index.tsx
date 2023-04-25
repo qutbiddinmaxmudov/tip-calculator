@@ -4,7 +4,7 @@ import NumberInput from "../NumberInput";
 import dollarIcon from "../../images/icon-dollar.svg";
 import personIcon from "../../images/icon-person.svg";
 import BillPercent from "../BillPercent";
-import { checkBill, checkPeople } from "./helpers";
+import { calculateBill, calculateTip, checkBill, checkPeople } from "./helpers";
 import Bill from "../Bill";
 
 const TipCalculator: React.FC = () => {
@@ -17,6 +17,14 @@ const TipCalculator: React.FC = () => {
   const handlePeopleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setPeople(+e.target.value);
   };
+
+  const handleReset = () => {
+    setPeople(1);
+    setBill(10);
+    setPercent(15);
+  };
+  const [tip, total] = calculateBill(bill, percent, people);
+
   return (
     <div className={styles.calculator}>
       <div className={styles.calculator__controls}>
@@ -38,7 +46,7 @@ const TipCalculator: React.FC = () => {
           error={checkPeople(people)}
         />
       </div>
-      <Bill/>
+      <Bill tip={tip} total={total} onReset={handleReset} />
     </div>
   );
 };
