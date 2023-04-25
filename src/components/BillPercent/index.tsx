@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import styles from "./BillPercent.module.scss";
 import classNames from "classnames";
 
@@ -9,6 +9,12 @@ type Props = {
 };
 
 const BillPercent: React.FC<Props> = ({ percent, setPercent }) => {
+  const handlePercentChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (isNaN(+e.target.value)) {
+      return;
+    }
+    setPercent(+e.target.value > 300 ? 300 : +e.target.value);
+  };
   return (
     <div className={styles.percent}>
       <div className={styles.percent__header}>
@@ -28,7 +34,7 @@ const BillPercent: React.FC<Props> = ({ percent, setPercent }) => {
         ))}
         <input
           className={styles.percent__input}
-          onChange={(e) => setPercent(+e.target.value)}
+          onChange={handlePercentChange}
           type="text"
           value={percent}
         />

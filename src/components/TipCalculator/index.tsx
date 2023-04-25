@@ -4,7 +4,7 @@ import NumberInput from "../NumberInput";
 import dollarIcon from "../../images/icon-dollar.svg";
 import personIcon from "../../images/icon-person.svg";
 import BillPercent from "../BillPercent";
-import { calculateBill, calculateTip, checkBill, checkPeople } from "./helpers";
+import { calculateBill, checkBill, checkPeople } from "./helpers";
 import Bill from "../Bill";
 
 const TipCalculator: React.FC = () => {
@@ -12,9 +12,15 @@ const TipCalculator: React.FC = () => {
   const [people, setPeople] = useState(1);
   const [percent, setPercent] = useState(10);
   const handleBillChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (+e.target.value > 100000000 || isNaN(+e.target.value)) {
+      return;
+    }
     setBill(+e.target.value);
   };
   const handlePeopleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (+e.target.value > 100 || isNaN(+e.target.value)) {
+      return;
+    }
     setPeople(+e.target.value);
   };
 
